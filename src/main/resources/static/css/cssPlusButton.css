@@ -1,0 +1,180 @@
+span {
+	cursor: pointer;
+}
+
+.number {
+	margin-top: 20px;
+}
+
+.minus, .plus {
+	width: 20px;
+	height: 34px;
+	background: #f2f2f2;
+	border-radius: 4px;
+	padding: 8px 5px 8px 5px;
+	border: 1px solid #ddd;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+input {
+	height: 34px;
+	width: 100px;
+	text-align: center;
+	font-size: 26px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	background-attachment: fixed;
+}
+
+.fa-cart-plus {
+	background: #0652dd;
+}
+
+.addtocart {
+	margin-top: 40px; display : block;
+	padding: 0.5em 1em 0.5em 1em;
+	border-radius: 10px;
+	border: none;
+	font-size: 2em;
+	position: relative;
+	background: #0652dd;
+	cursor: pointer;
+	height: 2em;
+	width: 10em;
+	overflow: hidden;
+	transition: transform 0.1s;
+	z-index: 1;
+	display: block;
+}
+
+.addtocart:hover {
+	transform: scale(1.1);
+}
+
+.pretext {
+	color: #fff;
+	background: #0652dd;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Quicksand", sans-serif;
+}
+
+i {
+	margin-right: 10px;
+}
+
+.done {
+	background: #be2edd;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	transition: transform 0.3s ease;
+	transform: translate(-110%) skew(-40deg);
+}
+
+.posttext {
+	background: #be2edd;
+}
+
+.fa-check {
+	background: #be2edd;
+}
+
+/*-----------------------------------------------------------------------------*/
+.shoppingbasket {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  position: absolute;
+  top: 20px;
+  right: 13%;
+}
+.basketitems {
+  color: #fff;
+  font-size: 80%;
+  background-color: #e74c3c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -90%);
+  -moz-transform: translate(-50%, -90%);
+  transform: translate(-50%, -90%);
+  padding: 0 12%;
+  border-radius: 1000px;
+}
+.shoppingbasket .top {
+  width: 60%;
+  height: 10%;
+  border-radius: 1000px;
+  background-color: #fff;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.shoppingbasket .bottom {
+  width: 50%;
+  height: 10%;
+  border-radius: 1000px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.shoppingbasket .left {
+  width: 50%;
+  height: 10%;
+  border-radius: 1000px;
+  background-color: #fff;
+  position: absolute;
+  top: 45%;
+  left: 1%;
+  -webkit-transform: rotate(80deg);
+  -moz-transform: translateX(80deg);
+  transform: translateX(80deg);
+}
+.shoppingbasket .right {
+  width: 50%;
+  height: 10%;
+  border-radius: 1000px;
+  background-color: #fff;
+  position: absolute;
+  top: 45%;
+  right: 1%;
+  -webkit-transform: rotate(-80deg);
+  -moz-transform: translateX(-80deg);
+  transform: translateX(-80deg);
+}
+

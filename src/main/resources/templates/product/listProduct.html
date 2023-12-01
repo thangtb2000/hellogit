@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/style-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/table-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/to-do.css}" rel="stylesheet">
+<link th:href="@{/css/table-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/view.css}" rel="stylesheet">
+
+</head>
+<body>
+
+	<section id="container">
+		<!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+		<!--header start-->
+		<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right"
+					data-original-title="Toggle Navigation"></div>
+			</div>
+			<!--logo start-->
+			<a th:href="@{/}" class="logo"><b>HOME</b></a>
+			<!--logo end-->
+
+			<div class="top-menu">
+				<ul class="nav pull-right top-menu">
+					<li><a class="logout" href="login.html">Logout</a></li>
+				</ul>
+			</div>
+		</header>
+		<!--header end-->
+
+		<!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
+
+
+
+					<li class="sub-menu"><a th:href="@{/product/list}">Sản Phẩm</a></li>
+					<li class="sub-menu"><a th:href="@{/category/list}">Loại</a>
+
+						
+
+				</ul>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<!--sidebar end-->
+
+		<!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<h3>
+					PRODUCT
+				</h3>
+<a href="/product/add">ADD PRODUCT</a>
+				<div class="row mt">
+					<div class="col-md-12">
+						<div class="content-panel">
+							<table class="table table-striped table-advance table-hover">
+								<h4>
+									<i class="fa fa-angle-right"></i> THÔNG TIN SẢN PHẨM
+								</h4>
+								<hr>
+								<thead>
+									<tr>
+										<th><i class="fa fa-bullhorn"></i> ID</th>
+										<th>Photo</th>
+										<th class="hidden-phone"><i class="fa fa-question-circle"></i>
+											NAME</th>
+										<th><i class="fa fa-bookmark"></i> PRICE</th>
+										<th><i class=" fa fa-edit"></i> DESCRIPTION</th>
+										<th><i class=" fa fa-edit"></i> CATEGORY</th>
+										<th><i class=" fa fa-edit"></i> ACTION</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="p : ${list}">
+										<td><span th:text="${p.id}"> </span></td>
+										<td><img th:src="@{${'/img/'+ p.photo}}" width="100px" height="100px" /></td>	
+										<td><span th:text="${p.name}"> </span></td>
+										<td><span th:text="${p.price}"> </span></td>
+										<td><span th:text="${p.description}"
+										 style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2;  line-clamp: 2; -webkit-box-orient: vertical; width: 600px;"> </span></td>
+										 <td><span th:text="${p.category.name}"> </span></td>
+										<td>
+											<button class="btn btn-success btn-xs">
+												<a th:href="@{/product/view(pID=${p.id})}" style="color: white;">VIEW</a>
+											</button>
+											<button class="btn btn-primary btn-xs">
+												<a th:href="@{/product/update(pID=${p.id})}" style="color: white;">UPDATE</a>
+											</button>
+											<button class="btn btn-danger btn-xs">
+												<a th:href="@{/product/delete(pID=${p.id})}" style="color: white;">DELETE</a>
+											</button>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- /content-panel -->
+					</div>
+					<!-- /col-md-12 -->
+				</div>
+				<!-- /row -->
+
+			</section>
+			<! --/wrapper -->
+		</section>
+		<!-- /MAIN CONTENT -->
+
+		<!--main content end-->
+		<!--footer start-->
+		<footer> </footer>
+		<!--footer end-->
+	</section>
+
+
+
+</body>
+</html>

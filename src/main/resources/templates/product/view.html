@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/view.css}" rel="stylesheet">
+<link th:href="@{/css/style-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/table-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/to-do.css}" rel="stylesheet">
+<link th:href="@{/css/table-responsive.css}" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<link th:href="@{/css/cssPlusButton.css}" rel="stylesheet">
+<style>
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	width: 40%;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+	padding: 2px 16px;
+}
+</style>
+
+</head>
+<body>
+
+	<section id="container">
+
+
+		<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right"
+					data-original-title="Toggle Navigation"></div>
+			</div>
+			<!--logo start-->
+			<div></div>
+			<a th:href="@{/}" class="logo"><b>HOME</b></a>
+			<!--logo end-->
+			<a th:href="@{/}" class="logo"
+				style="margin-left: 1070px; color: red">Xin Chào : <span
+				th:text="${user.Username}" style="color: red"></span></a>
+			<div class="top-menu">
+				<ul class="nav pull-right top-menu">
+					<li><a class="logout" th:href="@{/xem-gio-hang}">Xem Giỏ
+							Hàng</a></li>
+					<li><a class="logout" th:href="@{/logout}">Logout</a></li>
+				</ul>
+			</div>
+		</header>
+
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
+					<li class="sub-menu"><a th:href="@{/product/list}">Sản
+							Phẩm</a></li>
+					<li class="sub-menu"><a th:href="@{/category/list}">Loại</a>
+				</ul>
+			</div>
+		</aside>
+
+		<section id="main-content">
+			<section class="wrapper">
+				<h3>THÔNG TIN SẢN PHẨM</h3>
+				<div class="row">
+
+					<div class=" col-lg-6">
+						<img th:src="@{${'/img/'+ p.photo}}" style="width: 100%; height: 550px; margin-left: 25px">
+					</div>
+
+					<div class="col-lg-6">
+						<div class="container" style="margin-left: 20px">						
+							<span th:text="*{p.name}" style="font-weight: bold;font-size: 35px;font-family: 'Time New Roman'"></span>
+							<span th:text="*{p.description}" style="margin-top:20px; font-size: 20px; font-family: 'Time New Roman'; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2;  line-clamp: 2; -webkit-box-orient: vertical; width: 600px;"></span>
+							<div style="margin-top: 20px">
+								<img src="/img/tien.png" style="width: 100px" />
+								<span th:text="*{p.price}" style="font-weight: bold;font-size: 31px; color:red"></span>
+							</div>
+							
+<!-- 							<div class="number"> -->
+<!-- 								<span class="minus">-</span>  -->
+<!-- 								<input type="text" value="1" />  -->
+<!-- 								<span class="plus">+</span> -->
+<!-- 							</div> -->
+							
+							
+							<button class="addtocart">
+							  <div class="pretext">
+							    <i  class="fas fa-cart-plus" style="font-family: Time New Roman;font-style: normal"><a th:href="@{/giohang(pID=${p.id})}" style="color:white;">Thêm Giỏ Hàng</a></i> 
+							  </div>
+							  
+							  <div class="pretext done">
+							    <div class="posttext"><i class="fas fa-check"></i> Đã Thêm</div>
+							  </div>
+							  
+							</button>
+							
+		
+
+								
+						</div>
+					</div>
+				</div>
+
+			</section>
+		</section>
+
+	</section>
+
+
+	<script type="text/javascript" th:src="@{/js/buttonPlus.js}">
+
+	</script>
+
+</body>
+</html>

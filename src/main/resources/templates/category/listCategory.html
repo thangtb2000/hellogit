@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+<link th:href="@{/css/style.css}" rel="stylesheet">
+<link th:href="@{/css/style-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/table-responsive.css}" rel="stylesheet">
+<link th:href="@{/css/to-do.css}" rel="stylesheet">
+<link th:href="@{/css/table-responsive.css}" rel="stylesheet">
+
+</head>
+<body>
+
+	<section id="container">
+		<!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+		<!--header start-->
+		<header class="header black-bg">
+			<div class="sidebar-toggle-box">
+				<div class="fa fa-bars tooltips" data-placement="right"
+					data-original-title="Toggle Navigation"></div>
+			</div>
+			<!--logo start-->
+			<a th:href="@{/}" class="logo"><b>HOME</b></a>
+			<!--logo end-->
+
+			<div class="top-menu">
+				<ul class="nav pull-right top-menu">
+					<li><a class="logout" href="login.html">Logout</a></li>
+				</ul>
+			</div>
+		</header>
+		<!--header end-->
+
+		<!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
+
+
+
+					<li class="sub-menu"><a th:href="@{/product/list}">Sản Phẩm</a></li>
+					<li class="sub-menu"><a th:href="@{/category/list}">Loại</a>
+
+						
+
+				</ul>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<!--sidebar end-->
+
+		<!-- **********************************************************************************************************************************************************
+      MAIN CONTENT
+      *********************************************************************************************************************************************************** -->
+		<!--main content start-->
+		<section id="main-content">
+			<section class="wrapper">
+				<h3>
+					CATEGORY
+				</h3>
+					<a href="/category/add">ADD CATEGORY</a>
+				<div class="row mt">
+					<div class="col-md-12">
+						<div class="content-panel">
+							<table class="table table-striped table-advance table-hover">
+								<h4>
+									<i class="fa fa-angle-right"></i> Thông Tin Loại
+								</h4>
+								<hr>
+								<thead>
+									<tr>
+										<th><i class="fa fa-bullhorn"></i> ID</th>
+										<th class="hidden-phone"><i class="fa fa-question-circle"></i>
+											NAME</th>
+					
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr  th:each="c : ${list}">
+										<td><span th:text="${c.id}"> </span></td>
+	            						<td><span th:text="${c.name}"> </span></td>
+										<td>
+											<button class="btn btn-success btn-xs">
+												<a th:href="@{/category/view(cID=${c.id})}" style="color: white;">VIEW</a>
+											</button>
+											<button class="btn btn-primary btn-xs">
+												<a th:href="@{/category/update(cID=${c.id})}" style="color: white;">UPDATE</a>
+											</button>
+											<button class="btn btn-danger btn-xs">
+												<a th:href="@{/category/delete(cID=${c.id})}" style="color: white;">DELETE</a>
+											</button>
+										</td>
+									</tr>
+
+								</tbody>
+							</table>
+						</div>
+						<!-- /content-panel -->
+					</div>
+					<!-- /col-md-12 -->
+				</div>
+				<!-- /row -->
+
+			</section>
+			<! --/wrapper -->
+		</section>
+		<!-- /MAIN CONTENT -->
+
+		<!--main content end-->
+		<!--footer start-->
+		<footer> </footer>
+		<!--footer end-->
+	</section>
+
+
+
+</body>
+</html>
