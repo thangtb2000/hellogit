@@ -74,7 +74,7 @@ public class ProductController {
 		return "redirect:/product/list";
 	}
 
-	@GetMapping("/update")
+	
 	public String update(@RequestParam(name = "pID") Long id, Model model) {
 
 		model.addAttribute("p", productServiceImpl.getById(id));
