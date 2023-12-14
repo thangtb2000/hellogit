@@ -19,7 +19,7 @@ import com.example.webbanhang.dto.ProductDTO;
 import com.example.webbanhang.service.ProductService;
 
 @Controller
-public class OrderController {
+public class OrderControllerBE {
 	@Autowired
 	private ProductService productService;
 

@@ -34,7 +34,8 @@ public class ProductController {
 	@GetMapping("/list")
 	public String list1(Model model) {
 		model.addAttribute("list", productServiceImpl.getList());
-		return "product/listProduct";
+		System.out.println("list1 start");
+		return "product/list";
 	}
 
 	@GetMapping("/add")
