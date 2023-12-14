@@ -12,7 +12,8 @@ public class UserController {
 	@GetMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(name="e", required = false) String error) {
 		if(error != null) {
-			request.setAttribute("e", error);
+			System.out.println("Error: ");
+			request.setAttribute("e", error + "!!!");
 		}
 		return "login";
 	}
